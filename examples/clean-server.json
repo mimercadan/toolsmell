@@ -1,0 +1,47 @@
+{
+  "tools": [
+    {
+      "name": "search_docs",
+      "description": "Full-text search over the product documentation. Returns up to 10 matching sections with titles and URLs.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query_text": {
+            "type": "string",
+            "description": "Words to search for"
+          },
+          "limit": {
+            "type": "integer",
+            "description": "Max results (1-10)"
+          }
+        },
+        "required": [
+          "query_text"
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": true
+      }
+    },
+    {
+      "name": "archive_ticket",
+      "description": "Archive a support ticket. Irreversible: ask the user to confirm the ticket id first.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "ticket_id": {
+            "type": "string",
+            "description": "Ticket id, e.g. T-1234",
+            "pattern": "^T-\\d+$"
+          }
+        },
+        "required": [
+          "ticket_id"
+        ]
+      },
+      "annotations": {
+        "destructiveHint": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "toolsmell"
+version = "0.1.0"
+description = "Lint MCP / OpenAI / Anthropic tool definitions for tool poisoning, shadowing, risky capabilities and context bloat."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Miguel Mercado" }]
+requires-python = ">=3.9"
+dependencies = []
+keywords = ["mcp", "llm", "ai-agents", "security", "linter", "prompt-injection"]
+
+[project.scripts]
+toolsmell = "toolsmell.cli:main"
+
+[tool.setuptools]
+packages = ["toolsmell"]
